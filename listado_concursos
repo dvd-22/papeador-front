@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Listado de Concursos</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        padding: 20px;
+    }
+
+    h2 { margin-bottom: 10px; }
+
+    table {
+        width: 90%;
+        margin: 0 auto 30px;
+        background: white;
+        border-collapse: collapse;
+        box-shadow: 0 0 5px rgba(0,0,0,0.15);
+    }
+
+    th, td {
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+    }
+
+    th {
+        background: #eaeaea;
+    }
+
+    .btn-join {
+        background: #0d6efd;
+        color: white;
+        padding: 10px 18px;
+        border: none;
+        cursor: pointer;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 15px;
+        transition: background 0.2s ease-in-out;
+        font-family: Arial, sans-serif;
+    }
+
+    .btn-join:hover {
+        background: #206cde;
+    }
+</style>
+</head>
+
+<body>
+
+<div id="notificacion" 
+     style="position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background:#206cde;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            display: none;">
+</div>
+
+<h2>Concursos Disponibles</h2>
+
+<table>
+    <tr>
+        <th>Nombre del Concurso</th>
+        <th>Organizador</th>
+        <th>Inicio</th>
+        <th>Fin</th>
+        <th>Acción</th>
+    </tr>
+
+    <tr>
+        <td>Educational Codeforces Round 185</td>
+        <td>BledDest</td>
+        <td>28/11/2025 08:35</td>
+        <td>28/11/2025 10:35</td>
+        <td><button class="btn-join" onclick="unirse('Codeforce')">Unirse</button></td>
+    </tr>
+
+    <tr>
+        <td>Codeforces Round Div. 2</td>
+        <td>Neon Roms</td>
+        <td>29/11/2025 08:35</td>
+        <td>29/11/2025 10:35</td>
+        <td><button class="btn-join" onclick="unirse('Div2 Round')">Unirse</button></td>
+    </tr>
+</table>
+
+<script>
+function unirse(nombre) {
+    const aviso = document.getElementById("notificacion");
+    aviso.textContent = "Te has unido al concurso: " + nombre;
+    aviso.style.display = "block";
+
+    setTimeout(() => {
+        aviso.style.display = "none";
+    }, 2000);
+}
+</script>
+
+</body>
+</html>
